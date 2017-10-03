@@ -1,0 +1,73 @@
+<!--
+Copyright 2017 LGS Innovations
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../bower_components/iron-resizable-behavior/iron-resizable-behavior.html">
+<link rel="import" href="../base-layout/base-drawer-layout/base-drawer-layout.html">
+<link rel="import" href="../base-shared-styles/base-shared-styles.html">
+
+<dom-module id="system-settings-app">
+  <template>
+    <style include="base-shared-styles"></style>
+    <style>
+      :host {
+        display: block;
+        position: relative;
+        height: 100%;
+      }
+    </style>
+
+    <base-drawer-layout
+      id="layout"
+      m-name="system-settings"
+      m-icon="icons:settings"
+      m-display-name="System Settings",
+      pages="[[pages]]"
+      default-page-name="settings">
+    </base-drawer-layout>
+
+  </template>
+  <script>
+    (() => {
+      'use strict';
+
+      Polymer({
+
+        is: 'system-settings-app',
+
+        behaviors: [Polymer.IronResizableBehavior],
+
+        properties: {
+          pages: {
+            type: Array,
+            value: function () {
+              return [{
+                name: 'settings',
+                element: 'system-settings-list',
+                displayName: 'Settings',
+                import: '/elements/system-settings/system-settings-list.html',
+                icon: 'icons:settings'
+              }];
+            }
+          }
+        },
+
+        toggleSidenav: function() {
+          this.$.layout.toggleSidenav();
+        }
+      });
+    })();
+  </script>
+</dom-module>

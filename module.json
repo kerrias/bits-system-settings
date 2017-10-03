@@ -1,0 +1,19 @@
+{
+    "category": "System",
+    "scopes": [
+        {
+            "displayName": "Public",
+            "name": "public"
+        }
+    ],
+    "displayName": "System Settings",
+    "name": "system-settings",
+    "appDir": "app",
+    "contentImport": "/elements/system-settings-app/system-settings-app.html",
+    "contentElement": "system-settings-app",
+    "version": "2.9.0",
+    "dependencies": {
+        "bits-base": "^2.0.0"
+    },
+    "icon": "icons:settings"
+}
