@@ -11,7 +11,7 @@
     "appDir": "app",
     "contentImport": "/elements/system-settings-app/system-settings-app.html",
     "contentElement": "system-settings-app",
-    "version": "2.9.0",
+    "version": "",
     "dependencies": {
         "bits-base": "^2.0.0"
     },
