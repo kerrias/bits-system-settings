@@ -1,11 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "bits:install": "npm run yarn:install:offline:prod",
+    "bits:install": "yarn --prod",
     "lint": "eslint --fix *.js lib test",
     "test": "mocha",
     "build": "yarn && npm run lint && npm run test"
-
   },
   "dependencies": {
   },
