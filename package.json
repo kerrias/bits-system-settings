@@ -7,6 +7,7 @@
     "build": "yarn && npm run lint && npm run test"
   },
   "dependencies": {
+    "@skidder/bits-auto-discovery": "^1.0.2"
   },
   "devDependencies": {
     "eslint": "^4.4.1",
