@@ -82,17 +82,20 @@ limitations under the License.
         },
 
         observers: [
-          '_settingsChanged(settings)'
+          '_settingsChanged(settings.*)'
         ],
 
         ready: function() {
           this._cache = {};
         },
 
-        _settingsChanged: function(settings) {
+        _settingsChanged: function(changes) {
+          let settings = [];
+          if (Array.isArray(this.settings)) {
+            settings = this.settings;
+          }
           const content = Polymer.dom(this.$.settingslist);
-          return Promise.all(this.settings.map((setting) => this._loadSetting(setting)))
-          // return Promise.all(this.settings.reverse().map((setting) => this._loadSetting(setting)))
+          return Promise.all(settings.map((setting) => this._loadSetting(setting)))
           .then((elements) => {
             while (0 < content.children.length) {
               content.removeChild(content.firstChild);
